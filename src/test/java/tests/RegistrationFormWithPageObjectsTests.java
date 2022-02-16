@@ -5,10 +5,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-
 public class RegistrationFormWithPageObjectsTests {
     RegistrationPage registrationPage = new RegistrationPage();
     String firstName = "Alex";
@@ -55,26 +51,6 @@ public class RegistrationFormWithPageObjectsTests {
                         .checkForm("Picture", "1.jpg")
                         .checkForm("Address", currentAddress)
                         .checkForm("State and City", state + " "+ city);
-
-        /* $(".table-responsive").$(byText("Student Name"))
-                .parent().shouldHave(text("Alex Ivanov"));
-        $(".table-responsive").$(byText("Student Email"))
-                .parent().shouldHave(text("Alex@test.com"));
-        $(".table-responsive").$(byText("Gender"))
-                .parent().shouldHave(text("Male"));
-        $(".table-responsive").$(byText("Mobile"))
-                .parent().shouldHave(text("7904540014"));
-        $(".table-responsive").$(byText("Date of Birth"))
-                .parent().shouldHave(text("30 July,2008"));
-        $(".table-responsive").$(byText("Hobbies"))
-                .parent().shouldHave(text("Sports"));
-        $(".table-responsive").$(byText("Picture"))
-                .parent().shouldHave(text("1.jpg"));
-        $(".table-responsive").$(byText("Address"))
-                .parent().shouldHave(text("999999"));
-        $(".table-responsive").$(byText("State and City"))
-                .parent().shouldHave(text("NCR Delhi"));*/
-
 
     }
 }
